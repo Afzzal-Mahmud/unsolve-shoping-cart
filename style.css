@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+.list{
+    width: 300px;
+    background: rgb(63, 168, 201);
+    margin: 2em;
+    padding: 2em;
+}
+.list p{
+    margin-bottom: 1em;
+}
+.btn{
+    padding: .5em 1em;
+}
+.container__cart{
+    min-height: 100vh;
+    background: rgb(54, 189, 117);
+}
