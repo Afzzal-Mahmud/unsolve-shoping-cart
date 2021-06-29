@@ -5,8 +5,9 @@ for(var i = 0; i<btnAll.length; i++){
 
     btn.addEventListener('click',function(e){
 
-        const listItem = e.target.parentElement
-        console.log(listItem)
+        const productDiv = e.target.parentElement
+        var title = productDiv.getElementsByClassName('')
+
     })
 }
 
