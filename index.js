@@ -12,20 +12,40 @@ for(var i = 0; i<btnAll.length; i++){
         var imgSrc = productDiv.getElementsByClassName('product__image')[0].src;
         var price = productDiv.getElementsByClassName('product__price')[0].innerText;
 
-        //console.log(title,imgSrc,price)
-
         //passing details on cartDetailsPassed function
 
         cartDetailsPassed(title,imgSrc,price)
     })
 }
-//crating cartDetailsPassed function and passing argument on this
+        //passing argument on this cartDetailsPassed function
 
     function cartDetailsPassed(title,imgSrc,price){
         var cartContainer = document.createElement('li');
         cartItemsEach.append(cartContainer);
+
+        /* jodi html er product title ekbar add hoye jay tahole ar add korbe na kintu
+        ei comment kora code ta direct return kore ditese what happend to see please 
+        uncomment the code below*/
+    
+        /*
+        problem code.see what happend on uncomment
+
+        const productTitle = document.getElementsByClassName('product__title')
+        for(var i =0;i<productTitle.length; i++){
+            var noMoreAddBtn = productTitle[i];
+
+            if(noMoreAddBtn.innerText == title){
+                alert('This item is alrady added to your cart')
+                return;
+            }
+
+        }
+        */
+
         cartContainer.innerHTML= 
+
         `
+
         <li class="cart__item__each">
         <h3>${title}</h3>
         <img src="${imgSrc}" alt="">
@@ -34,12 +54,14 @@ for(var i = 0; i<btnAll.length; i++){
             delete Item
         </button>
     </li>
+
         `
 cartContainer.getElementsByClassName('remove__btn')[0].addEventListener('click',btnRemove)   
 
-    }
+}
 
 
+//delet add to cart item
 
 const removeCart = document.getElementsByClassName('remove__btn');
 
