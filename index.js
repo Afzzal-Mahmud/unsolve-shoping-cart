@@ -4,7 +4,9 @@ for(var i = 0; i<btnAll.length; i++){
     const btn = btnAll[i]
 
     btn.addEventListener('click',function(e){
-        console.log('btn click')
+
+        const listItem = e.target.parentElement
+        console.log(listItem)
     })
 }
 
@@ -14,6 +16,7 @@ for(var i =0; i<removeCart.length; i++){
     var removeCartItem = removeCart[i];
 
     removeCartItem.addEventListener('click', function(e){
-        console.log('remove btn clicked')
+       const btnDel = e.target.parentElement;
+       btnDel.remove()
     })
 }
