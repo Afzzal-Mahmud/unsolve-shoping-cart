@@ -35,7 +35,26 @@ function cartDetailsPassed(title, imgSrc, price) {
     var cartContainer = document.createElement('li');
     cartItemsEach.append(cartContainer);
 
-    //problem code see what happend on uncomment
+/*
+    const productTitle = document.getElementsByClassName('product__title')
+
+    //product title = cake Name
+
+     for(var i =0;i<productTitle.length; i++){
+         var noMoreAddBtn = productTitle[i];
+
+         if(noMoreAddBtn.innerText == title){
+             alert('This item is alrady added to your cart')
+             return;
+         }
+
+     }
+     */
+
+
+
+
+    //problem code see what happend
     cartContainer.innerHTML =
 
         `
@@ -50,34 +69,22 @@ function cartDetailsPassed(title, imgSrc, price) {
 
         `
 
-    /*  
+     
 
-     const productTitle = document.getElementsByClassName('product__title')
-     for(var i =0;i<productTitle.length; i++){
-         var noMoreAddBtn = productTitle[i];
-
-         if(noMoreAddBtn.innerText == title){
-             alert('This item is alrady added to your cart')
-             return;
-         }
-
-     }
-     */
+    
 
     cartContainer.getElementsByClassName('remove__btn')[0].addEventListener('click', btnRemove)
 
     createLocalCartData(cartContainer);
     createLocalCartData(cartContainer.innerHTML);
 
-    // let inner =cartContainer.innerHTML;
-    // createLocalCartData(inner);
 }
 
 
 //creating a local storage to save cart item data
 
-// let itemms = document.getElementsByClassName('cart__item__each');
-//cart container is li or the hole red box on the cart item
+//cart container = li or the hole red box on the cart item
+
 
 function createLocalCartData(cartContainer) {
     let cartItems;
@@ -89,3 +96,13 @@ function createLocalCartData(cartContainer) {
     cartItems.push(cartContainer);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
+
+
+
+
+
+// let inner =cartContainer.innerHTML;
+// createLocalCartData(inner);
+
+
+// let itemms = document.getElementsByClassName('cart__item__each');
